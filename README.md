@@ -24,7 +24,9 @@ Once these spatial joins were completed, the same expression was used on each.  
 was divided by the 2010 population for each ward then multiplied by 10,000 to get the number of incidents per 10,000 people per ward. 
 
 ![Fig. 1 - Crime Incidents per 10000 People](https://github.com/nfs26/GEOG682-Final/blob/master/GunIncidentsMap.png)
+# Fig. 1 - Crime Incidents per 10,000 People
 ![Fig. 2 - ShotSpotter Incidents per 10000 People](https://github.com/nfs26/GEOG682-Final/blob/master/ShotSpotterMap2017.png)
+# Fig. 2 - ShotSpotter Incidents per 10,000 People
 
  - Number of Gun Crimes Committed per 10,000 People in 2017 in Each Ward - 
  Ward 1: 15
