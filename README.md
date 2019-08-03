@@ -1,7 +1,7 @@
 # GEOG682-Final
-#DC Crime Mapping Analysis
-#Nina Smith
-#08/04/19
+# DC Crime Mapping Analysis
+# Nina Smith
+# 08/04/19
 
 ***Introduction***
 This is a project analyzing the effectiveness of Washington, DC's gunshot detection network.  This is done by examining the 
@@ -23,7 +23,8 @@ location with the polygon layer of "Ward from 2012."
 Once these spatial joins were completed, the same expression was used on each.  The count value (number of points that fell in each ward)
 was divided by the 2010 population for each ward then multiplied by 10,000 to get the number of incidents per 10,000 people per ward. 
 
-ADD MAPS!!!!!!
+![Fig. 1 - Crime Incidents per 10000 People]
+(https://github.com/nfs26/GEOG682-Final/blob/master/ShotSpotterMap2017.png)
 
  - Number of Gun Crimes Committed per 10,000 People in 2017 in Each Ward - 
  Ward 1: 15
