@@ -12,7 +12,6 @@ wards = "C:\Users\ninaf\OneDrive\Documents\UMD GEOINT\GEOG682\Final\Ward_from_20
 #add each layer to the map
 iface.addVectorLayer(wards,"DC Wards","ogr")
 iface.addVectorLayer(crimeInc, "DC Crime Incidents","ogr")
-iface.addVectorLayer(spotShot, "DC SpotShot Incidents","ogr")
 
 #create SQL expression
 expression = '"METHOD"  =  \'GUN\''
@@ -44,11 +43,24 @@ for feat in features1:
     value = ((count/pop)*10000)
     name = feat["NAME"]
     print(dict(zip(name,value)))
+
+#Add Spot Shot layer for a similar process
+iface.addVectorLayer(spotShot, "DC SpotShot Incidents","ogr")
+
+#Create a new SQL expression
+expression2 = 'left("DATETIME",4) = 2017'
+
+#select active layer (ShotSpotter) and select using defined expression
+layer2 = iface.activeLayer()
+layer2.selectByExpression(expression, QgsVectorLayer.SetSelection)
+
+#make new selection into another vector layer
+QgsVectorFileWriter.writeAsVectorFormat(layer, 'C:\Users\ninaf\OneDrive\Documents\UMD GEOINT\GEOG682\Final\SpotShotter2017.shp','utf-8',layer.crs(),'ESRI Shapefile',1)
     
 #join shot spotter layer with the ward layer
 processing.runalg("qgis:joinattributesbylocation",
     {'TARGET': 'C:\Users\ninaf\OneDrive\Documents\UMD GEOINT\GEOG682\Final\Ward_from_2012.shp',
-    'JOIN': 'C:\Users\ninaf\OneDrive\Documents\UMD GEOINT\GEOG682\Final\Shot_Spotter_Gun_Shots.shp',
+    'JOIN': 'C:\Users\ninaf\OneDrive\Documents\UMD GEOINT\GEOG682\Final\SpotShotter2017.shp',
     'PREDICATE':u'contains',
     'SUMMARY':1,
     'KEEP':0,
